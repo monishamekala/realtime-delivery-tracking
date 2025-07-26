@@ -1,0 +1,29 @@
+package com.example.tracking.controller
+
+import com.example.tracking.service.TrackingService
+import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.*
+
+@RestController
+@RequestMapping("/api/tracking")
+class TrackingController(
+    private val trackingService: TrackingService
+) {
+
+    @PostMapping
+    fun receiveTrackingEvent(@RequestBody event: TrackingEvent): ResponseEntity<String> {
+        trackingService.processEvent(event)
+        return ResponseEntity.ok("Event processed")
+    }
+
+    @GetMapping("/health")
+    fun healthCheck(): String = "Tracking service is running"
+}
+
+// DTO for incoming tracking data
+data class TrackingEvent(
+    val orderId: String,
+    val latitude: Double,
+    val longitude: Double,
+    val timestamp: Long
+)

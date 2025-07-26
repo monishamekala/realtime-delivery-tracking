@@ -1,0 +1,27 @@
+package com.example.tracking.service
+
+import com.example.tracking.controller.TrackingEvent
+import com.example.tracking.redis.RedisGeoCache
+import org.slf4j.LoggerFactory
+import org.springframework.stereotype.Service
+
+@Service
+class TrackingService(
+    private val redisGeoCache: RedisGeoCache
+    // You can inject a Kafka producer here when ready
+) {
+
+    private val logger = LoggerFactory.getLogger(TrackingService::class.java)
+
+    fun processEvent(event: TrackingEvent) {
+        logger.info("Processing tracking event: {}", event)
+
+        // 1. Cache location in Redis
+        redisGeoCache.cacheLocation(event.orderId, event.latitude, event.longitude)
+
+        // 2. Publish to Kafka (pseudo-code / optional)
+        // kafkaProducer.send("tracking-events", event)
+
+        // 3. Further business logic or DB storage as needed
+    }
+}
