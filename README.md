@@ -1,7 +1,3 @@
-# realtime-delivery-tracking
-
---- README.md ---
-
 # Real-Time Delivery Tracking Platform
 
 ## Overview
