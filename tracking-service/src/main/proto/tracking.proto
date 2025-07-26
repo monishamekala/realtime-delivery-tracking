@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.grpc";
+option java_outer_classname = "TrackingProto";
+
+package tracking;
+
+// The gRPC service definition
+service TrackingService {
+  rpc SendTracking (TrackingRequest) returns (TrackingResponse);
+}
+
+// The request message
+message TrackingRequest {
+  string orderId = 1;
+  double latitude = 2;
+  double longitude = 3;
+  int64 timestamp = 4;
+}
+
+// The response message
+message TrackingResponse {
+  string status = 1;
+}
+
