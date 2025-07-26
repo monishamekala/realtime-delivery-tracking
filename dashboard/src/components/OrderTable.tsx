@@ -30,3 +30,4 @@ export function OrderTable() {
     </div>
   )
 }
+
