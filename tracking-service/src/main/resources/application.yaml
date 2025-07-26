@@ -1,0 +1,22 @@
+spring:
+    datasource:
+      url: jdbc:postgresql://localhost:26257/delivery?sslmode=disable
+      username: root
+      password:
+    jpa:
+      hibernate:
+        ddl-auto: validate
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: true
+    sql:
+      init:
+        platform: cockroachdb
+        mode: always
+  
+  logging:
+    level:
+      org.hibernate.SQL: DEBUG
+
+      
