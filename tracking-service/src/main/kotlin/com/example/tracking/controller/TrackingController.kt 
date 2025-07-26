@@ -20,6 +20,18 @@ class TrackingController(
     fun healthCheck(): String = "Tracking service is running"
 }
 
+@RestController
+class TrackingController(
+    private val redisGeoCache: RedisGeoCache
+) {
+
+    @GetMapping("/api/vehicles")
+    fun getAllVehicleLocations(): List<VehicleLocation> {
+        return redisGeoCache.getAllVehicleLocations()
+    }
+}
+
+
 // DTO for incoming tracking data
 data class TrackingEvent(
     val orderId: String,

@@ -3,3 +3,4 @@
 @tailwind utilities;
 
 @import "@fontsource/inter";
+@import "leaflet/dist/leaflet.css";
