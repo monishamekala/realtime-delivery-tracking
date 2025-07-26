@@ -88,15 +88,26 @@ npm run dev  # Vite will run on http://localhost:5173
 ---
 
 ## Future Scope
-- Mobile app version (React Native / Flutter)
-- ML-based ETA predictions
-- Live delivery route maps with Leaflet / Mapbox
-- Multi-region Kafka clusters
-- Webhooks + external integrations (Twilio, SendGrid)
-- WebSocket-based real-time user updates
-- CI/CD with GitHub Actions + Helm charts for production
+
+As the system evolves and usage scales, there are several areas where both functional capabilities and technical underpinnings can be enhanced:
+
+### Functional Improvements
+- **Mobile Application Integration:** Develop native or cross-platform apps (React Native or Flutter) to offer real-time order tracking and driver communication for end users.
+- **Delivery Route Visualization:** Integrate dynamic map visualization (e.g., Leaflet, Mapbox) to show active vehicle paths, completed routes, and optimal delivery planning.
+- **Customer Notification Preferences:** Allow end users to set custom notification rules (SMS, Email, App Push) using configurable templates and rules engines.
+- **Predictive ETA and Anomaly Detection:** Introduce machine learning models to estimate delivery time windows and flag anomalies (e.g., off-route, idling).
+- **Reporting and Analytics:** Build interactive dashboards for logistics teams with filterable metrics like on-time delivery rate, average distance, and time per zone.
+
+### Technical Enhancements
+- **High Availability (HA) Kafka and Redis Clusters:** Deploy Kafka and Redis in HA mode with replication, partition tuning, and failover support across regions.
+- **Database Sharding and Read Replicas:** Use CockroachDB's horizontal scaling to distribute large datasets and optimize for read-heavy admin features.
+- **Multi-region Kubernetes Deployment:** Deploy microservices across multiple cloud regions with active-active replication, autoscaling policies, and latency-based routing.
+- **End-to-End Observability:** Extend Prometheus/Grafana with traces (OpenTelemetry), structured logs, and alerting workflows.
+- **Service Mesh Integration:** Introduce Istio or Linkerd to manage inter-service traffic, mTLS security, retries, and circuit breaking.
+- **Authentication and Role-Based Access Control (RBAC):** Use OAuth2 or OpenID Connect for user auth, and fine-grained access control across API layers.
+- **Event Sourcing and CQRS Patterns:** Improve write-read separation in services that handle state changes rapidly by introducing Command Query Responsibility Segregation.
+- **CI/CD Hardening:** Automate test suites, rollback strategies, staging blue/green deploys using GitHub Actions + Helm/ArgoCD.
+
+These enhancements are not just about scaling users or adding more features — they strengthen the platform’s core architecture, improve reliability under load, and ensure operational excellence in production environments.
 
 ---
-
-## License
-MIT License
