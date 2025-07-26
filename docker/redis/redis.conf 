@@ -1,0 +1,18 @@
+# Allow all interfaces to connect (development only)
+bind 0.0.0.0
+
+# Disable protected mode (be careful in production!)
+protected-mode no
+
+# Optional: set memory usage limit (e.g., 100MB)
+# maxmemory 100mb
+# maxmemory-policy allkeys-lru
+
+# Enable AOF persistence for durability
+appendonly yes
+
+# Log level (debug | verbose | notice | warning)
+loglevel notice
+
+# Default port
+port 6379
