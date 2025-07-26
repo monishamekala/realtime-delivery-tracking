@@ -1,0 +1,50 @@
+# Node.js
+node_modules/
+dist/
+build/
+.env
+.env.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sw?
+
+# OS-generated
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# JetBrains
+*.iml
+*.iws
+*.ipr
+out/
+
+# Docker
+docker-compose.override.yml
+
+# IntelliJ
+*.class
+
+# Gradle
+.gradle/
+build/
+
+# Spring Boot
+target/
+*.jar
+*.war
+
+# Kubernetes
+*.yaml~
+
+# Other
+coverage/
